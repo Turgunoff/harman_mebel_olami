@@ -6,11 +6,11 @@ class SplashScreen extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     Get.put(SplashController()); // Controller initialize
-    
+
     return Scaffold(
       backgroundColor: Color(0xFF00897B),
       body: Center(
-        child: Obx(() => AnimatedBuilder(
+        child: AnimatedBuilder(
           animation: controller.animationController,
           builder: (context, child) {
             return FadeTransition(
@@ -41,9 +41,9 @@ class SplashScreen extends GetView<SplashController> {
                         color: Color(0xFF00897B),
                       ),
                     ),
-                    
+
                     SizedBox(height: 30),
-                    
+
                     Text(
                       'HARMAN',
                       style: TextStyle(
@@ -53,9 +53,9 @@ class SplashScreen extends GetView<SplashController> {
                         letterSpacing: 3,
                       ),
                     ),
-                    
+
                     SizedBox(height: 8),
-                    
+
                     Text(
                       'Mebellar Olami',
                       style: TextStyle(
@@ -65,9 +65,9 @@ class SplashScreen extends GetView<SplashController> {
                         letterSpacing: 1,
                       ),
                     ),
-                    
+
                     SizedBox(height: 50),
-                    
+
                     SizedBox(
                       width: 30,
                       height: 30,
@@ -81,7 +81,7 @@ class SplashScreen extends GetView<SplashController> {
               ),
             );
           },
-        )),
+        ),
       ),
     );
   }

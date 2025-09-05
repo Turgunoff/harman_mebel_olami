@@ -1,16 +1,74 @@
-# harman_mebel_olami
+# Harman Mebellar Olami 🪑
 
-Harman Mebellar Olami - mebel katalog ilovasi
+**Harman Group MCHJ** tomonidan ishlab chiqilgan mobil mebel katalog ilovasi.
 
-## Getting Started
+## 📱 Ilova Haqida
 
-This project is a starting point for a Flutter application.
+Harman Mebellar Olami - bu zamonaviy mebel mahsulotlarini ko'rish va sotib olish uchun qulay mobil ilova. Ilovamiz orqali siz:
 
-A few resources to get you started if this is your first Flutter project:
+- 🏠 Keng mebel katalogini ko'rishingiz
+- ❤️ Yoqtirgan mahsulotlarni sevimlilar ro'yxatiga qo'shishingiz
+- 📞 Bizga oson bog'lanishingiz
+- 🌙 Tungi rejimdan foydalanishingiz mumkin
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Asosiy Xususiyatlar
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Offline ishlaydi** - Internet talab qilinmaydi
+- **4 ta asosiy bo'lim**: Asosiy, Katalog, Sevimlilar, Aloqa
+- **Qidirish funksiyasi** - Katalog ichida
+- **Dark/Light mode** - Ko'z uchun qulay
+- **Sevimlilar** - Keyinroq ko'rish uchun saqlash
+- **To'g'ridan-to'g'ri qo'ng'iroq** - Bir bosishda bog'lanish
+
+## 🛠 Texnologiyalar
+
+- **Flutter** - Cross-platform mobil dasturlash
+- **GetX** - State management va navigation
+- **SharedPreferences** - Ma'lumotlar saqlash
+- **Material 3** - Zamonaviy UI dizayn
+
+## 📋 Talablar
+
+- **Android**: 5.0+ (API 21+)
+- **iOS**: 11.0+
+- **Storage**: 50MB
+
+## 🚀 O'rnatish
+
+## 📞 Aloqa
+
+- **Telefon**: +998 XX XXX XX XX
+- **Manzil**: Toshkent shahar, Uzbekistan
+- **Email**: info@harmangroup.uz
+- **Telegram**: @harmangroup
+
+## 🏢 Harman Group MCHJ Haqida
+
+Harman Group - Uzbekistondagi yetakchi mebel ishlab chiqaruvchi va sotuvchi kompaniya. 20 yildan ortiq tajriba bilan mijozlarimizga sifatli va zamonaviy mebel mahsulotlarini taklif etamiz.
+
+### Bizning Xizmatlar:
+
+- Mebel ishlab chiqarish
+- Buyurtma asosida mebel tayyorlash
+- Bepul yetkazib berish
+- Kafolat xizmati
+- Dizayn maslahatlari
+
+## 📄 Litsenziya
+
+© 2024 Harman Group MCHJ. Barcha huquqlar himoyalangan.
+
+## 🔄 Yangilanishlar
+
+### V1.0.0 (2024)
+
+- ✅ Birinchi versiya chiqarildi
+- ✅ Asosiy katalog funksiyalari
+- ✅ Sevimlilar tizimi
+- ✅ Dark mode qo'llab-quvvatlash
+
+---
+
+**Ishlab chiquvchi:** Flutter Developer  
+**Kompaniya:** Harman Group MCHJ  
+**Hudud:** Uzbekistan

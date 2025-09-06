@@ -1,4 +1,5 @@
 import '../models/product.dart';
+import 'categories_data.dart';
 
 class ProductsData {
   static List<Product> getAllProducts() {
@@ -11,7 +12,7 @@ class ProductsData {
         price: 3500000, // 3,500,000 so'm
         oldPrice: 5250000, // 5,250,000 so'm
         discountPercent: 33,
-        category: "yotoqxona",
+        categoryId: "yotoqxona",
         hasDiscount: true,
         isNew: true,
         images: [
@@ -57,11 +58,19 @@ Ramka yuqori sifatli LDSTP materialidan tayyorlangan. Bosh tayanch mikrovelur ma
     ];
   }
 
-  // Kategoriya bo'yicha filter
-  static List<Product> getProductsByCategory(String category) {
+  // Kategoriya bo'yicha filter - YANGI!
+  static List<Product> getProductsByCategory(String categoryId) {
     return getAllProducts()
-        .where((product) => product.category == category)
+        .where((product) => product.categoryId == categoryId)
         .toList();
+  }
+
+  // Kategoriya nomi bo'yicha
+  static List<Product> getProductsByCategoryName(String categoryName) {
+    final category = CategoriesData.getAllCategories().firstWhere(
+      (cat) => cat.nameUz == categoryName || cat.name == categoryName,
+    );
+    return getProductsByCategory(category.id);
   }
 
   // Yangi mahsulotlar
@@ -72,5 +81,34 @@ Ramka yuqori sifatli LDSTP materialidan tayyorlangan. Bosh tayanch mikrovelur ma
   // Chegirmali mahsulotlar
   static List<Product> getDiscountedProducts() {
     return getAllProducts().where((product) => product.hasDiscount).toList();
+  }
+
+  // Qidiruv - umumiy
+  static List<Product> searchProducts(String query) {
+    final lowercaseQuery = query.toLowerCase();
+    return getAllProducts()
+        .where(
+          (product) =>
+              product.name.toLowerCase().contains(lowercaseQuery) ||
+              product.code.toLowerCase().contains(lowercaseQuery) ||
+              (product.category?.nameUz.toLowerCase().contains(
+                    lowercaseQuery,
+                  ) ??
+                  false),
+        )
+        .toList();
+  }
+
+  // Kategoriya ichida qidiruv
+  static List<Product> searchInCategory(String categoryId, String query) {
+    final categoryProducts = getProductsByCategory(categoryId);
+    final lowercaseQuery = query.toLowerCase();
+    return categoryProducts
+        .where(
+          (product) =>
+              product.name.toLowerCase().contains(lowercaseQuery) ||
+              product.code.toLowerCase().contains(lowercaseQuery),
+        )
+        .toList();
   }
 }

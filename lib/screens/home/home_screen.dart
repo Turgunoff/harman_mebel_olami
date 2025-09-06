@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:harman_mebel_olami/constants/app_theme.dart';
 import '../../controllers/home_controller.dart';
+import '../../data/categories_data.dart';
 import '../../widgets/product_card.dart';
+import '../catalog/category_products_screen.dart';
 
 class HomeScreen extends GetView<HomeController> {
   @override
@@ -283,6 +285,10 @@ class HomeScreen extends GetView<HomeController> {
   }
 
   Widget _buildCategoriesSection(BuildContext context) {
+    final categories = CategoriesData.getSortedCategories()
+        .take(4)
+        .toList(); // Faqat 4 ta
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -302,26 +308,15 @@ class HomeScreen extends GetView<HomeController> {
               crossAxisSpacing: 15,
               mainAxisSpacing: 15,
             ),
-            itemCount: 4, // Vaqtincha 4 ta
+            itemCount: categories.length,
             itemBuilder: (context, index) {
-              final categories = [
-                {'name': 'Yotoqxona', 'icon': Icons.bed, 'color': Colors.blue},
-                {'name': 'Zal', 'icon': Icons.chair, 'color': Colors.green},
-                {
-                  'name': 'Oshxona',
-                  'icon': Icons.kitchen,
-                  'color': Colors.orange,
-                },
-                {'name': 'Ofis', 'icon': Icons.desk, 'color': Colors.purple},
-              ];
+              final category = categories[index];
 
               return Card(
                 child: InkWell(
                   onTap: () {
-                    Get.snackbar(
-                      'Kategoriya',
-                      '${categories[index]['name']} tanlandi',
-                    );
+                    // Kategoriya mahsulotlarini ko'rsatish
+                    Get.to(() => CategoryProductsScreen(category: category));
                   },
                   borderRadius: BorderRadius.circular(12),
                   child: Padding(
@@ -330,13 +325,13 @@ class HomeScreen extends GetView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          categories[index]['icon'] as IconData,
+                          category.iconData,
                           size: 40,
-                          color: categories[index]['color'] as Color,
+                          color: category.colorValue,
                         ),
                         SizedBox(height: 10),
                         Text(
-                          categories[index]['name'] as String,
+                          category.nameUz,
                           style: Theme.of(context).textTheme.bodyLarge,
                           textAlign: TextAlign.center,
                         ),
@@ -352,63 +347,60 @@ class HomeScreen extends GetView<HomeController> {
     );
   }
 
-Widget _buildNewProductsSection(BuildContext context) {
-  return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 20),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Yangi mahsulotlar',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            TextButton(
-              onPressed: () {
-                // Katalog sahifasiga o'tish - keyinroq implement qilamiz
-                Get.snackbar(
-                  "Katalog", 
-                  "Katalog sahifasi keyinroq qo'shiladi",
-                  backgroundColor: Theme.of(context).primaryColor,
-                  colorText: Colors.white,
-                );
-              },
-              child: Text(
-                'Barchasini ko\'rish',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  color: Theme.of(context).primaryColor,
+  Widget _buildNewProductsSection(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Yangi mahsulotlar',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              TextButton(
+                onPressed: () {
+                  // Katalog sahifasiga o'tish - keyinroq implement qilamiz
+                  Get.snackbar(
+                    "Katalog",
+                    "Katalog sahifasi keyinroq qo'shiladi",
+                    backgroundColor: Theme.of(context).primaryColor,
+                    colorText: Colors.white,
+                  );
+                },
+                child: Text(
+                  'Barchasini ko\'rish',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(height: 15),
-        Container(
-          height: 220, // 200 dan 220 ga oshirdik
-          child: controller.newProducts.isEmpty
-              ? Center(
-                  child: Text(
-                    'Yangi mahsulotlar yo\'q',
-                    style: Theme.of(context).textTheme.bodyLarge,
+            ],
+          ),
+          SizedBox(height: 15),
+          Container(
+            height: 220, // 200 dan 220 ga oshirdik
+            child: controller.newProducts.isEmpty
+                ? Center(
+                    child: Text(
+                      'Yangi mahsulotlar yo\'q',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  )
+                : ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: controller.newProducts.length,
+                    itemBuilder: (context, index) {
+                      final product = controller.newProducts[index];
+                      return ProductCard(product: product, width: 160);
+                    },
                   ),
-                )
-              : ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: controller.newProducts.length,
-                  itemBuilder: (context, index) {
-                    final product = controller.newProducts[index];
-                    return ProductCard(
-                      product: product,
-                      width: 160,
-                    );
-                  },
-                ),
-        ),
-      ],
-    ),
-  );
-}
+          ),
+        ],
+      ),
+    );
+  }
 }

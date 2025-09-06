@@ -142,7 +142,7 @@ class SettingsScreen extends GetView<ThemeController> {
             title: Text('Telegram', style: TextStyle(fontFamily: 'Poppins')),
             subtitle: Text('@harmangroup'),
             trailing: Icon(Icons.open_in_new, color: Colors.blue[700]),
-            onTap: () => _openTelegram('@harmangroup'),
+            onTap: () => _openTelegram('@harmangroup_uz'),
           ),
         ),
       ],

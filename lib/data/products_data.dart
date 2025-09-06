@@ -9,8 +9,8 @@ class ProductsData {
         name:
             "Yotoq o'rni ko'tariluvchi mexanizm bilan \"Samarqand\" Olcha / Qora",
         code: "HRM2024",
-        price: 3500000, // 3,500,000 so'm
-        oldPrice: 5250000, // 5,250,000 so'm
+        price: 3500000,
+        oldPrice: 5250000,
         discountPercent: 33,
         categoryId: "yotoqxona",
         hasDiscount: true,
@@ -58,8 +58,8 @@ Ramka yuqori sifatli LDSTP materialidan tayyorlangan. Bosh tayanch mikrovelur ma
         id: "2",
         name: "Mehmon zali uchun devor shkafi \"Orneta\" №80 Yong'oq tusli",
         code: "KOMPL0723",
-        price: 7588800, // 189,720 ₽ ning so'mdagi qiymati
-        oldPrice: 18972000, // 474,300 ₽
+        price: 7588800,
+        oldPrice: 18972000,
         discountPercent: 60,
         categoryId: "zal",
         hasDiscount: true,
@@ -108,15 +108,15 @@ Korpus yuqori sifatli LDStP materialidan tayyorlangan. Yuzalar ramkali MDF profi
           "Maksimal yuk": "Stolcha 25 kg, javon 11 kg",
           "Kafolat": "18 oy",
           "Kolleksiya": "Orneta",
-          "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
         id: "2",
         name: "Mehmon zali to'plami \"Luara\" №3 Kulrang",
         code: "KOMPLKX00099",
-        price: 2033280, // 50,832 ₽ ning so'mdagi qiymati
-        oldPrice: 5083200, // 127,080 ₽
+        price: 2033280,
+        oldPrice: 5083200,
         discountPercent: 60,
         categoryId: "zal",
         hasDiscount: true,
@@ -163,15 +163,15 @@ To'plam neoklassik va Provans uslublarida bajarilgan bo'lib, kulrang rangda chir
           "Polka yuki": "5 kg gacha",
           "Kafolat": "18 oy",
           "Kolleksiya": "Luara",
-          "Ishlab chiqaruvchi": "Belarus mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
         id: "4",
         name: "Ofis kabineti uchun to'plam \"Kassiya\" №5 Kulrang",
         code: "KOMPLKX00093",
-        price: 955360, // 23,884 ₽ ning so'mdagi qiymati
-        oldPrice: 2388400, // 59,710 ₽
+        price: 955360,
+        oldPrice: 2388400,
         discountPercent: 60,
         categoryId: "ofis",
         hasDiscount: true,
@@ -214,7 +214,7 @@ Kulrang rang va chap tomondagi metall tayanch stolni o'ziga xos interior buyumig
           "Maksimal yuk": "Stolcha 30 kg, javon 5 kg",
           "Kafolat": "18 oy",
           "Kolleksiya": "Kassiya",
-          "Ishlab chiqaruvchi": "Belarus mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
@@ -222,8 +222,8 @@ Kulrang rang va chap tomondagi metall tayanch stolni o'ziga xos interior buyumig
         name:
             "Ofis kabineti uchun to'plam \"Kassiya\" №1 Kulrang / Yong'oq vatan",
         code: "KOMPLKX00089",
-        price: 2911040, // 72,776 ₽ ning so'mdagi qiymati
-        oldPrice: 7277600, // 181,940 ₽
+        price: 2911040,
+        oldPrice: 7277600,
         discountPercent: 60,
         categoryId: "ofis",
         hasDiscount: true,
@@ -268,7 +268,7 @@ Korpus va yuzalarning kulrang rangi ochiq yong'oq vatan teksturali javonlar va d
           "Maksimal yuk": "Stolcha 40 kg, qopqoq 35 kg",
           "Kafolat": "18 oy",
           "Kolleksiya": "Kassiya",
-          "Ishlab chiqaruvchi": "Belarus mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
@@ -276,8 +276,8 @@ Korpus va yuzalarning kulrang rangi ochiq yong'oq vatan teksturali javonlar va d
         name:
             "Ikki qavatli bolalar krovati \"Allegro\" 90x200 Oq / Yong'oq natural",
         code: "4651",
-        price: 3530560, // 88,264 ₽ ning so'mdagi qiymati
-        oldPrice: 8826400, // 220,660 ₽
+        price: 3530560,
+        oldPrice: 8826400,
         discountPercent: 60,
         categoryId: "bolalar",
         hasDiscount: true,
@@ -321,7 +321,7 @@ Himoya paneli bolaning yuqori yotoq joyidan yiqilishini oldini oladi. Zinapoya b
           "Matras chuqurlik": "11,4 sm",
           "Kafolat": "18 oy",
           "Kolleksiya": "Allegro",
-          "Ishlab chiqaruvchi": "Belarus mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
@@ -329,8 +329,8 @@ Himoya paneli bolaning yuqori yotoq joyidan yiqilishini oldini oladi. Zinapoya b
         name:
             "Bolalar xonasi to'plami \"Jelato\" №4 Yong'oq Vinchentsa / Beton / Bordo",
         code: "KOMPLDD00177",
-        price: 2826840, // 70,671 ₽ ning so'mdagi qiymati
-        oldPrice: 9422800, // 235,570 ₽
+        price: 2826840,
+        oldPrice: 9422800,
         discountPercent: 70,
         categoryId: "bolalar",
         hasDiscount: true,
@@ -377,15 +377,15 @@ Universal rang gammasi - yuzalardagi tabiiy teksturalarning uyg'un birikmasi har
           "Bosh tayanch qalinlik": "7 sm",
           "Kafolat": "18 oy",
           "Kolleksiya": "Jelato",
-          "Ishlab chiqaruvchi": "Belarus mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
         id: "9",
         name: "Yayiladigan ovqat stoli \"DANTE\" Qora / Vintage yong'oq",
         code: "sDT01",
-        price: 2000160, // 50,004 ₽ ning so'mdagi qiymati
-        oldPrice: 5000400, // 125,010 ₽
+        price: 2000160,
+        oldPrice: 5000400,
         discountPercent: 60,
         categoryId: "ovqat_xonasi",
         hasDiscount: true,
@@ -426,7 +426,7 @@ Sharli yo'naltiruvchilar stolni silliq va ovozsiz transformatsiya qilish imkonin
           "Rang": "Qora / Quyuq yong'oq",
           "Kafolat": "18 oy",
           "Kolleksiya": "DANTE",
-          "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
 
@@ -434,8 +434,8 @@ Sharli yo'naltiruvchilar stolni silliq va ovozsiz transformatsiya qilish imkonin
         id: "10",
         name: "Yayiladigan ovqat stoli \"ROM-110\" Qora / Tutunli keramika",
         code: "sRM03",
-        price: 1199520, // 29,988 ₽ ning so'mdagi qiymati
-        oldPrice: 2998800, // 74,970 ₽
+        price: 1199520,
+        oldPrice: 2998800,
         discountPercent: 60,
         categoryId: "ovqat_xonasi",
         hasDiscount: true,
@@ -477,15 +477,15 @@ Tayanchlar stolchaga nisbatan burchak ostida joylashgan, bu stolning chayqalishi
           "Rang": "Qora / Kulrang",
           "Kafolat": "18 oy",
           "Kolleksiya": "ROM",
-          "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
       Product(
         id: "11",
         name: "Stul \"Artur\" Oq / Velutto 52",
         code: "sAR01",
-        price: 495040, // 12,376 ₽ ning so'mdagi qiymati
-        oldPrice: 1237600, // 30,940 ₽
+        price: 495040,
+        oldPrice: 1237600,
         discountPercent: 60,
         categoryId: "oshxona",
         hasDiscount: true,
@@ -528,7 +528,7 @@ Egilish-yopishtiruvchi fanera yuqori mustahkamlik va yuk bardoshliligiga ega, sh
           "Maksimal yuk": "120 kg",
           "Kafolat": "36 oy",
           "Kolleksiya": "Artur",
-          "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
+          "Ishlab chiqaruvchi": "Harman Group MCHJ",
         },
       ),
     ];

@@ -8,6 +8,8 @@ import '../../widgets/product_card.dart';
 import '../catalog/category_products_screen.dart';
 
 class HomeScreen extends GetView<HomeController> {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());

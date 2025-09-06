@@ -157,7 +157,7 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ),
         if (product.oldPrice != null) ...[
-          SizedBox(width: 12),
+          SizedBox(width: 8),
           Text(
             product.formattedOldPrice,
             style: TextStyle(
@@ -169,9 +169,9 @@ class ProductDetailScreen extends StatelessWidget {
           ),
         ],
         if (product.discountPercent != null) ...[
-          SizedBox(width: 12),
+          SizedBox(width: 4),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(12),

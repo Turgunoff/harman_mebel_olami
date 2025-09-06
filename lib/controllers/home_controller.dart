@@ -13,7 +13,7 @@ class HomeController extends GetxController {
   final List<Map<String, dynamic>> banners = [
     {
       'badge': 'CHEGIRMA',
-      'title': '30% Chegirma',
+      'title': '33% Chegirma',
       'subtitle': 'Barcha yotoqxona mebellari uchun maxsus taklifimiz',
       'accent': 'Faqat bu oyda!',
       'icon': Icons.local_offer,
@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     {
       'badge': 'YANGILIK',
       'title': 'Yangi Kolleksiya',
-      'subtitle': '2024 yilning eng so\'nggi dizaynlari bilan tanishing',
+      'subtitle': '2025 yilning eng so\'nggi dizaynlari bilan tanishing',
       'accent': 'Ekskluziv',
       'icon': Icons.auto_awesome,
       'colors': [Color(0xFF00d2ff), Color(0xFF3a7bd5)],
@@ -30,7 +30,7 @@ class HomeController extends GetxController {
     {
       'badge': 'BEPUL',
       'title': 'Yetkazib Berish',
-      'subtitle': '1 million so\'mdan yuqori barcha xaridlar uchun',
+      'subtitle': '2 million so\'mdan yuqori barcha xaridlar uchun',
       'accent': 'Tez va ishonchli',
       'icon': Icons.local_shipping,
       'colors': [Color(0xFFfa709a), Color(0xFFfee140)],

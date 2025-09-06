@@ -360,24 +360,6 @@ class HomeScreen extends GetView<HomeController> {
                 'Yangi mahsulotlar',
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
-              TextButton(
-                onPressed: () {
-                  // Katalog sahifasiga o'tish - keyinroq implement qilamiz
-                  Get.snackbar(
-                    "Katalog",
-                    "Katalog sahifasi keyinroq qo'shiladi",
-                    backgroundColor: Theme.of(context).primaryColor,
-                    colorText: Colors.white,
-                  );
-                },
-                child: Text(
-                  'Barchasini ko\'rish',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-              ),
             ],
           ),
           SizedBox(height: 15),

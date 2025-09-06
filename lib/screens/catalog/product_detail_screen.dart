@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../../constants/app_theme.dart';
 import '../../models/product.dart';
 import '../../controllers/favorites_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -294,20 +295,7 @@ class ProductDetailScreen extends StatelessWidget {
       width: double.infinity,
       height: 50,
       child: ElevatedButton.icon(
-        onPressed: () async {
-          final phoneNumber = "+998901234567"; // Sizning raqamingiz
-          final url = "tel:$phoneNumber";
-          if (await canLaunchUrl(Uri.parse(url))) {
-            await launchUrl(Uri.parse(url));
-          } else {
-            Get.snackbar(
-              "Xatolik",
-              "Telefon qo'ng'iroq qilish imkonsiz",
-              backgroundColor: Colors.red,
-              colorText: Colors.white,
-            );
-          }
-        },
+        onPressed: () => _makePhoneCall("+998950796972"), // Real raqamingiz
         icon: Icon(Icons.phone, size: 24),
         label: Text(
           "Buyurtma uchun qo'ng'iroq qiling",
@@ -323,5 +311,30 @@ class ProductDetailScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // Action methods
+  void _makePhoneCall(String phoneNumber) async {
+    try {
+      final uri = Uri(scheme: 'tel', path: phoneNumber);
+
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        // Agar to'g'ridan-to'g'ri qo'ng'iroq qilish imkonsiz bo'lsa
+        // Dialer'ni ochib raqamni ko'rsatish
+        final dialerUri = Uri.parse('tel:$phoneNumber');
+        await launchUrl(dialerUri, mode: LaunchMode.externalApplication);
+      }
+    } catch (e) {
+      // Fallback - raqamni ko'rsatish
+      Get.snackbar(
+        'Telefon',
+        'Raqam: $phoneNumber\nQo\'lda terish uchun raqamni eslab qoling',
+        duration: Duration(seconds: 5),
+        backgroundColor: AppTheme.primaryColor,
+        colorText: Colors.white,
+      );
+    }
   }
 }

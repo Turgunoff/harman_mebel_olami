@@ -21,6 +21,8 @@ dependencies:
   lottie: ^3.3.1
   carousel_slider: ^5.1.1
   package_info_plus: ^8.3.1
+  iconsax_plus: ^1.0.0
+  iconsax_flutter: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +31,12 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.14.4
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#00897B"
+
 flutter:
   uses-material-design: true
 
@@ -36,6 +44,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/images/products/
+    - assets/icon/
 
   fonts:
     - family: Poppins

@@ -391,9 +391,9 @@ Universal rang gammasi - yuzalardagi tabiiy teksturalarning uyg'un birikmasi har
         hasDiscount: true,
         isNew: false,
         images: [
-          "assets/images/products/dante_table_1_csecollege.jpg",
-          "assets/images/products/dante_table_2_csecollege.jpg",
-          "assets/images/products/dante_table_3_csecollege.jpg",
+          "assets/images/products/dante_table_1_csecollege.jpeg",
+          "assets/images/products/dante_table_2_csecollege.jpeg",
+          "assets/images/products/dante_table_3_csecollege.jpeg",
         ],
         description: """
 Dumaloq stolchali "DANTE" yayiladigan ovqat stoli - kichik oshxona yoki studiya uchun yechim. Stolcha 40 sm ga kengayadi, shuning uchun unga ko'proq taomlar qo'yish mumkin bo'ladi.
@@ -441,9 +441,9 @@ Sharli yo'naltiruvchilar stolni silliq va ovozsiz transformatsiya qilish imkonin
         hasDiscount: true,
         isNew: true,
         images: [
-          "assets/images/products/rom_110_table_1_csecollege.jpg",
-          "assets/images/products/rom_110_table_2_csecollege.jpg",
-          "assets/images/products/rom_110_table_3_csecollege.jpg",
+          "assets/images/products/rom_110_table_1_csecollege.jpeg",
+          "assets/images/products/rom_110_table_2_csecollege.jpeg",
+          "assets/images/products/rom_110_table_3_csecollege.jpeg",
         ],
         description: """
 "ROM" yayiladigan ovqat stoli nafaqat kundalik foydalanish uchun, balki mehmonlarni kutib olish uchun ham mos keladi. Stolcha 32 sm ga kengayadi, shuning uchun unga ko'proq taomlar qo'yish mumkin bo'ladi.
@@ -477,6 +477,57 @@ Tayanchlar stolchaga nisbatan burchak ostida joylashgan, bu stolning chayqalishi
           "Rang": "Qora / Kulrang",
           "Kafolat": "18 oy",
           "Kolleksiya": "ROM",
+          "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
+        },
+      ),
+      Product(
+        id: "11",
+        name: "Stul \"Artur\" Oq / Velutto 52",
+        code: "sAR01",
+        price: 495040, // 12,376 ₽ ning so'mdagi qiymati
+        oldPrice: 1237600, // 30,940 ₽
+        discountPercent: 60,
+        categoryId: "oshxona",
+        hasDiscount: true,
+        isNew: false,
+        images: [
+          "assets/images/products/stul_artur_white_1_csecollege.jpeg",
+          "assets/images/products/stul_artur_white_2_csecollege.jpeg",
+        ],
+        description: """
+"Artur" yumshoq stuli - bu lakoniklik va qulaylikning ideal birikmasi. Model dizayni yumaloq orqa tayanch va orqa tayanch bilan o'rindiq orasidagi tirqish bilan ajralib turadi.
+
+Qoplama yoqimli mat teksturali velurdan tayyorlangan. Modelni oshxona yoki ovqat xonasi uchun 4-6 ta stul to'plamida ishlatish mumkin. Shuningdek, stul yotoqxona yoki mehmon zali uchun mustaqil interior buyumi sifatida ham xizmat qilishi mumkin.
+
+Egilish-yopishtiruvchi fanera yuqori mustahkamlik va yuk bardoshliligiga ega, shuning uchun stul ko'p yillar davomida xizmat qiladi. Yonboshlar qo'llab-quvvatlash o'tirishni qulayroq qiladi.
+  """,
+        features: [
+          "Velur qoplama - yumshoq va yoqimli teginish",
+          "Fanera ramka yuqori mustahkamlik va bardoshlilik",
+          "Yumaloq orqa tayanch yon qo'llab-quvvatlash bilan",
+          "Mustahkam metall oyoqlar 120 kg gacha bardosh beradi",
+          "60,000 sikl ishqalanishga chidamli",
+          "Zamonaviy va lakonik dizayn",
+          "Oshxona va ovqat xonasi uchun ideal",
+          "Rossiya sifati va 36 oy kafolat",
+        ],
+        specifications: {
+          "Mahsulot kodi": "sAR01.mb.52u",
+          "O'lchamlari (B x E x Ch)": "82,5 x 49 x 52 sm",
+          "Orqa tayanch balandligi": "36 sm",
+          "O'rindiq balandligi": "49 sm",
+          "O'rindiq chuqurligi": "43 sm",
+          "Ishlab chiqaruvchi mamlakat": "Rossiya",
+          "Uslub": "Zamonaviy / Loft",
+          "Rang": "Oq / Kulrang",
+          "Ramka": "Egilish-yopishtiruvchi fanera",
+          "Oyoqlar": "Metall, oq",
+          "Qoplama": "Velur Velutto (100% poliester)",
+          "Qoplama zichligi": "251,5 g/m²",
+          "Chidamlilik": "60,000 sikl Martindeyl testi",
+          "Maksimal yuk": "120 kg",
+          "Kafolat": "36 oy",
+          "Kolleksiya": "Artur",
           "Ishlab chiqaruvchi": "Rossiya mebel fabrikasi",
         },
       ),

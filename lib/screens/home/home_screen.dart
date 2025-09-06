@@ -363,7 +363,7 @@ class HomeScreen extends GetView<HomeController> {
             ],
           ),
           SizedBox(height: 15),
-          Container(
+          SizedBox(
             height: 220, // 200 dan 220 ga oshirdik
             child: controller.newProducts.isEmpty
                 ? Center(

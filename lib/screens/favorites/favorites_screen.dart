@@ -10,24 +10,26 @@ class FavoritesScreen extends GetView<FavoritesController> {
   @override
   Widget build(BuildContext context) {
     Get.put(FavoritesController()); // Controller'ni initialize qilish
-    
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Sevimlilar'),
         actions: [
-          Obx(() => controller.favoriteProducts.isNotEmpty
-              ? IconButton(
-                  icon: Icon(Icons.clear_all),
-                  onPressed: () => _showClearDialog(context),
-                )
-              : SizedBox()),
+          Obx(
+            () => controller.favoriteProducts.isNotEmpty
+                ? IconButton(
+                    icon: Icon(Icons.clear_all),
+                    onPressed: () => _showClearDialog(context),
+                  )
+                : SizedBox(),
+          ),
         ],
       ),
       body: Obx(() {
         if (controller.favoriteProducts.isEmpty) {
           return _buildEmptyState(context);
         }
-        
+
         return _buildFavoritesList(context);
       }),
     );
@@ -53,19 +55,19 @@ class FavoritesScreen extends GetView<FavoritesController> {
                 color: Theme.of(context).primaryColor.withOpacity(0.5),
               ),
             ),
-            
+
             SizedBox(height: 24),
-            
+
             Text(
               'Sevimlilar ro\'yxati bo\'sh',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: Colors.grey[700],
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.headlineSmall?.copyWith(color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),
-            
+
             SizedBox(height: 12),
-            
+
             Text(
               'Yoqtirgan mahsulotlaringizni sevimlilar ro\'yxatiga qo\'shing va keyinroq oson toping',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -73,31 +75,6 @@ class FavoritesScreen extends GetView<FavoritesController> {
                 height: 1.5,
               ),
               textAlign: TextAlign.center,
-            ),
-            
-            SizedBox(height: 32),
-            
-            ElevatedButton.icon(
-              onPressed: () {
-                // Katalog sahifasiga o'tish
-                Get.snackbar(
-                  "Katalog",
-                  "Katalog sahifasi keyinroq qo'shiladi",
-                  backgroundColor: Theme.of(context).primaryColor,
-                  colorText: Colors.white,
-                );
-              },
-              icon: Icon(Icons.shopping_bag),
-              label: Text(
-                'Mahsulotlarni ko\'rish',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              ),
             ),
           ],
         ),
@@ -114,38 +91,38 @@ class FavoritesScreen extends GetView<FavoritesController> {
           padding: EdgeInsets.all(16),
           child: Row(
             children: [
-              Icon(
-                Icons.favorite,
-                color: Colors.red,
-                size: 20,
-              ),
+              Icon(Icons.favorite, color: Colors.red, size: 20),
               SizedBox(width: 8),
-              Obx(() => Text(
-                '${controller.favoriteProducts.length} ta mahsulot',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w500,
+              Obx(
+                () => Text(
+                  '${controller.favoriteProducts.length} ta mahsulot',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
                 ),
-              )),
+              ),
             ],
           ),
         ),
-        
+
         // Mahsulotlar ro'yxati
         Expanded(
-          child: Obx(() => GridView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.7, // Card proportion
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
+          child: Obx(
+            () => GridView.builder(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.7, // Card proportion
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+              ),
+              itemCount: controller.favoriteProducts.length,
+              itemBuilder: (context, index) {
+                final product = controller.favoriteProducts[index];
+                return _buildFavoriteCard(context, product);
+              },
             ),
-            itemCount: controller.favoriteProducts.length,
-            itemBuilder: (context, index) {
-              final product = controller.favoriteProducts[index];
-              return _buildFavoriteCard(context, product);
-            },
-          )),
+          ),
         ),
       ],
     );
@@ -191,21 +168,26 @@ class FavoritesScreen extends GetView<FavoritesController> {
                             child: Icon(
                               Icons.chair,
                               size: 50,
-                              color: Theme.of(context).primaryColor.withOpacity(0.7),
+                              color: Theme.of(
+                                context,
+                              ).primaryColor.withOpacity(0.7),
                             ),
                           );
                         },
                       ),
                     ),
                   ),
-                  
+
                   // Badges
                   if (product.hasDiscount)
                     Positioned(
                       top: 8,
                       left: 8,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.red,
                           borderRadius: BorderRadius.circular(8),
@@ -220,13 +202,16 @@ class FavoritesScreen extends GetView<FavoritesController> {
                         ),
                       ),
                     ),
-                  
+
                   if (product.isNew)
                     Positioned(
                       top: 8,
                       right: 8,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.green,
                           borderRadius: BorderRadius.circular(8),
@@ -241,7 +226,7 @@ class FavoritesScreen extends GetView<FavoritesController> {
                         ),
                       ),
                     ),
-                  
+
                   // Favorite button
                   Positioned(
                     bottom: 8,
@@ -272,7 +257,7 @@ class FavoritesScreen extends GetView<FavoritesController> {
                 ],
               ),
             ),
-            
+
             // Mahsulot ma'lumotlari
             Expanded(
               flex: 2,
@@ -292,14 +277,15 @@ class FavoritesScreen extends GetView<FavoritesController> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    
+
                     SizedBox(height: 8),
-                    
+
                     // Narx
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (product.hasDiscount && product.oldPrice != null) ...[
+                        if (product.hasDiscount &&
+                            product.oldPrice != null) ...[
                           Text(
                             product.formattedOldPrice,
                             style: TextStyle(
@@ -347,26 +333,21 @@ class FavoritesScreen extends GetView<FavoritesController> {
             onPressed: () => Get.back(),
             child: Text(
               'Bekor qilish',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                color: Colors.grey[600],
-              ),
+              style: TextStyle(fontFamily: 'Poppins', color: Colors.grey[600]),
             ),
           ),
           ElevatedButton(
-            onPressed: () {
-              controller.clearAllFavorites();
+            onPressed: () async {
+              // Avval dialog'ni yoping
               Get.back();
+
+              // Keyin ma'lumotlarni o'chiring
+              controller.clearAllFavorites();
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-            ),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
             child: Text(
               'O\'chirish',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-              ),
+              style: TextStyle(fontFamily: 'Poppins', color: Colors.white),
             ),
           ),
         ],
